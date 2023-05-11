@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    My Blog
+{% endblock %}
+
+{% block css_files %}
+<link rel='stylesheet' href="{% static 'blog/post.css' %}"></link>
+<link rel='stylesheet' href="{% static 'blog/index.css' %}"></link>
+{% endblock %}
+
+{% block content %}
+    
+<section id='welcome'>
+
+    
+<header>
+   <img src="{% static 'blog/images/nik-logo.jpg' %}" alt='Nik-The Author of this Blog'></img>
+   <h2>QuadCharge</h2>
+</header>
+
+<p>Hi, I'm Nik aka QuadCharge and i play mobile games</p>
+
+</section>
+
+<section id='latest-posts'>
+    <h2>My Latest Toughts</h2>
+    <ul>
+        {% for post in latest_posts %}
+        {% include 'blog/includes/post.html' %}
+        {% endfor %}
+    </ul>
+
+</section>
+
+
+<section id='about'>
+    <h2>What i do</h2>
+    <p>I'm a gamer and python developer.I love to explore tech games</p>
+    <p>I will be the best gamer in the world</p>
+</section>
+{% endblock%}
